@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express()
 
-app.get("/", (req,res)=>{
+app.use(("/public", express.static(__dirname + "/static")))
+
+app.get("/hello", (req,res)=>{
     res.send("Hello World")
 })
 
